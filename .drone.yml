@@ -7,12 +7,19 @@ trigger:
 
 steps:
   - name: test
-    image: node:18.8-alpine
+    image: node:18.8
     commands:
+    # Note that this way of testing is less efficient due to inability to cache dependencies.
+    # To run tests, you need a browser :-) This will be even more inefficient because we do software installation
+    # every time we run a CI-build
+      - apt-get update -y
+      - apt-get install chromium -y
+      - export CHROME_BIN=chromium
+      - export PATH="./node_modules/.bin:${PATH}"
       - npm install
       - npm run lint
-      - npm run test
       - npm run format
+      - ng test --browsers ChromeHeadlessCI --code-coverage=true --watch=false
 
 ---
 kind: pipeline
