@@ -8,7 +8,7 @@
     ...is empty, spend some money please! I have expensive habits. Time is of the essence!
   </p>
 
-  <p
+  <ng-container
     *ngFor="let product of products"
     class="products"
   >
@@ -30,7 +30,7 @@
         </button>
       </div>
     </ibm-tile>
-  </p>
+  </ng-container>
 
   <div *ngIf="products.length !== 0">
     <div class="checkout-form">
