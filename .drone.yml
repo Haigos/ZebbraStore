@@ -15,10 +15,10 @@ steps:
       - apt-get update -y
       - apt-get install chromium -y
       - export CHROME_BIN=chromium
-      - export PATH="./node_modules/.bin:${PATH}"
       - npm install
       - npm run lint
       - npm run format
+      - export PATH="./node_modules/.bin:${PATH}"
       - ng test --browsers ChromeHeadlessCI --code-coverage=true --watch=false
 
 ---
