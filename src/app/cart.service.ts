@@ -13,11 +13,13 @@ export class CartService {
   }
 
   getItems() {
+    // Exposes reference to array
     return this.items;
   }
 
   clearCart() {
     this.items = [];
+    // Exposes reference to array
     return this.items;
   }
 
@@ -31,6 +33,7 @@ export class CartService {
     this.items.forEach(product => {
       if (!found) {
         if (product.id === productToDelete.id) {
+          // This seems redundant
           const spliceIndex = this.items.indexOf(productToDelete);
           this.items.splice(spliceIndex, 1);
           found = true;
