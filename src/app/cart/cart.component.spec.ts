@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { CartComponent } from "./cart.component";
-import {HttpClientTestingModule} from "@angular/common/http/testing";
-import {FormBuilder} from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 
 describe("CartComponent", () => {
   let component: CartComponent;
