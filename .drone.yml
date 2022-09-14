@@ -9,17 +9,16 @@ steps:
   - name: test
     image: node:18.8
     commands:
-    # Note that this way of testing is less efficient due to inability to cache dependencies.
-    # To run tests, you need a browser :-) This will be even more inefficient because we do software installation
-    # every time we run a CI-build
+      # Note that this way of testing is less efficient due to inability to cache dependencies.
+      # To run tests, you need a browser :-) This will be even more inefficient because we do software installation
+      # every time we run a CI-build
       - apt-get update -y
       - apt-get install chromium -y
       - export CHROME_BIN=chromium
       - npm install
       - npm run lint
       - npm run format
-      - export PATH="./node_modules/.bin:${PATH}"
-      - ng test --browsers ChromeHeadlessCI --code-coverage=true --watch=false
+      - PATH="./node_modules/.bin:${PATH}" ng test --browsers ChromeHeadlessCI --code-coverage=true --watch=false
 
 ---
 kind: pipeline
