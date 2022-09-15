@@ -1,9 +1,14 @@
 <div class="cart">
   <h2 class="header">Your cart</h2>
-  <p *ngIf="products.length === 0">
+
+  <p
+    *ngIf="products.length === 0"
+    class="empty-cart"
+  >
     ...is empty, spend some money please! I have expensive habits. Time is of the essence!
   </p>
-  <p
+
+  <ng-container
     *ngFor="let product of products"
     class="products"
   >
@@ -25,5 +30,40 @@
         </button>
       </div>
     </ibm-tile>
-  </p>
+  </ng-container>
+
+  <div *ngIf="products.length !== 0">
+    <div class="checkout-form">
+      <form
+        [formGroup]="checkoutForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <ibm-label>
+          {{ "Customer name" }}
+          <input
+            ibmText
+            formControlName="name"
+            placeholder="enter name"
+          />
+        </ibm-label>
+
+        <ibm-label>
+          {{ "Customer address" }}
+          <input
+            ibmText
+            formControlName="address"
+            placeholder="enter address"
+          />
+        </ibm-label>
+
+        <button
+          class="purchase-button"
+          ibmButton="secondary"
+          type="submit"
+        >
+          Purchase
+        </button>
+      </form>
+    </div>
+  </div>
 </div>

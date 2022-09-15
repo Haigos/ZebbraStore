@@ -5,7 +5,7 @@
 
   ibm-tile {
     text-align: center;
-    margin: 7px 7px;
+    margin-bottom: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +16,24 @@
   }
 }
 
+.checkout-form {
+  width: 50%;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.empty-cart {
+  margin-top: 20px;
+}
+
 .header {
   margin: auto;
+}
+
+.purchase-button {
+  margin-top: 20px;
+}
+
+form {
+  text-align: center;
 }

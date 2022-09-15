@@ -1,3 +1,8 @@
+| Branch    | Status                                                                                                                                             |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| main      | [![Build Status](https://ci.zebbra.ch/api/badges/Haigos/ZebbraStore/status.svg?ref=refs/heads/main)](https://ci.zebbra.ch/Haigos/ZebbraStore)      |
+| developer | [![Build Status](https://ci.zebbra.ch/api/badges/Haigos/ZebbraStore/status.svg?ref=refs/heads/developer)](https://ci.zebbra.ch/Haigos/ZebbraStore) |
+
 # CarbonStuff
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
